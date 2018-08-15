@@ -3,7 +3,7 @@ import Divider from "../../../components/Divider";
 import FAQComponent from "../../../components/FAQComponent";
 import "../../../styles/faq.css";
 
-export default class Projects extends React.PureComponent<{}, {}> {
+export default class FAQ extends React.PureComponent<{}, {}> {
   public render() {
     return (
       <section className="container mb-5 faq-container">

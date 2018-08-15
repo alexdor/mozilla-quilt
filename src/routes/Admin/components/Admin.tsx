@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Admin, Resource } from "react-admin";
-import "../../../styles/projects.css";
 import authProvider from "../helpers/authProvider";
 import dataProvider from "../helpers/dataProvider";
 import { IssueList } from "./Issues";
