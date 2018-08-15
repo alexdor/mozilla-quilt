@@ -1,0 +1,158 @@
+@import "./base";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+
+.web {
+  color: #6dd8af;
+  fill: #6dd8af;
+  hr {
+    border-color: #6dd8af;
+  }
+}
+.digital {
+  color: #5fa1f4;
+  fill: #5fa1f4;
+  hr {
+    border-color: #5fa1f4;
+  }
+}
+.openness {
+  color: #ff5c73;
+  fill: #ff5c73;
+  hr {
+    border-color: #ff5c73;
+  }
+}
+.decentralization {
+  color: #ffe159;
+  fill: #ffe159;
+  hr {
+    border-color: #ffe159;
+  }
+}
+.privacy {
+  color: #76e1f4;
+  fill: #76e1f4;
+  hr {
+    border-color: #76e1f4;
+  }
+}
+
+.home-story {
+  background-color: #fafafa;
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.33);
+  font-size: 18px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.2px;
+  line-height: 1.44;
+
+  .home-story-bottom-bar {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding: 0.2rem 1.5rem;
+  }
+  &-country {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    right: 0;
+    top: -25px;
+    &-content {
+      background: #fafafa;
+      border-radius: 15px 0 0;
+      padding-bottom: 0.2em;
+      padding-top: 0.2em;
+    }
+  }
+  &.web {
+    border-bottom: 4px solid #6dd8af;
+    &:hover,
+    .home-story-bottom-bar {
+      background: #6dd8af;
+      color: #fff;
+      fill: #fff;
+      .home-story-country-content {
+        background: #6dd8af;
+      }
+    }
+  }
+  &.digital {
+    border-bottom: 4px solid #5fa1f4;
+    &:hover,
+    .home-story-bottom-bar {
+      background: #5fa1f4;
+      color: #fff;
+      fill: #fff;
+      .home-story-country-content {
+        background: #5fa1f4;
+      }
+    }
+  }
+  &.openness {
+    border-bottom: 4px solid #ff5c73;
+    &:hover,
+    .home-story-bottom-bar {
+      background: #ff5c73;
+      color: #fff;
+      fill: #fff;
+      .home-story-country-content {
+        background: #ff5c73;
+      }
+    }
+  }
+  &.decentralization {
+    border-bottom: 4px solid #ffe159;
+    &:hover,
+    .home-story-bottom-bar {
+      background: #ffe159;
+      color: #fff;
+      fill: #fff;
+      .home-story-country-content {
+        background: #ffe159;
+      }
+    }
+  }
+  &.privacy {
+    border-bottom: 4px solid #76e1f4;
+    &:hover,
+    .home-story-bottom-bar {
+      background: #76e1f4;
+      color: #fff;
+      fill: #fff;
+      .home-story-country-content {
+        background: #76e1f4;
+      }
+    }
+  }
+  &-description {
+    color: #102131;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -0.2px;
+    line-height: 1.44;
+  }
+
+
+}
+
+.pin-icon {
+  margin-left: 0.7em;
+  margin-right: 0.3em;
+  width: 14px;
+}
+
+.expand-icon {
+  width: 20px;
+}
+
+@include media-breakpoint-only(md) {
+  .home-story-container {
+    margin-top: 0 !important;
+  }
+}
