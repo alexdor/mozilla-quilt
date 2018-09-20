@@ -34,7 +34,7 @@ export default class QuiltNavbar extends React.Component<
   {},
   IQuiltNavbarState
 > {
-  public readonly state = { isOpen: false, isModalOpen: true };
+  public readonly state = { isOpen: false, isModalOpen: false };
 
   public render() {
     return (

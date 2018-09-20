@@ -36,7 +36,7 @@ const stepKeyMapping = ["type", "work_on", "im_able", "country", "user"];
 
 class PostYourStory extends React.Component<any, IState> {
   public state = {
-    step: 4,
+    step: 0,
     type: undefined,
     counter: 0,
     user: { anonymous: true },
