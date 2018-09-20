@@ -1,4 +1,5 @@
-import { outboundLink, pageview } from "react-ga";
+import { outboundLink, pageview } from 'react-ga';
+
 export const multiFilter = (
   array: any[],
   filters: { [key: string]: any }

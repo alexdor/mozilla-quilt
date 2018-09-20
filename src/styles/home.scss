@@ -3,7 +3,6 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 
-
 .web {
   color: #6dd8af;
   fill: #6dd8af;
@@ -137,8 +136,6 @@
     letter-spacing: -0.2px;
     line-height: 1.44;
   }
-
-
 }
 
 .pin-icon {
@@ -154,5 +151,25 @@
 @include media-breakpoint-only(md) {
   .home-story-container {
     margin-top: 0 !important;
+  }
+}
+
+.load-more-btn {
+  border: solid 1px #b991db;
+  border-radius: 10px;
+  color: #b086d6;
+  font-family: $font-1;
+  font-size: 1.1em;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 1.44;
+  padding: 0.2em 2em;
+  text-align: center;
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #ccc;
+    color: #ccc;
   }
 }

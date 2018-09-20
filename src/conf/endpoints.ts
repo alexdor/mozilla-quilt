@@ -1,4 +1,4 @@
-import { develop } from "../helpers/helpers";
+import { develop } from '../helpers/helpers';
 
 export interface IJobConf {
   type?: string;
@@ -20,14 +20,13 @@ const endpoints = {
 };
 
 export let conf = {
-  // TODO: ADD THIS
-  apiBaseUrl: "https://",
+  apiBaseUrl: "https://api-quilt.swaco.io",
   endpoints
 };
 
 if (develop) {
   conf = {
-    apiBaseUrl: "http://localhost:4010/api/",
+    apiBaseUrl: "http://localhost:3000/api/",
     endpoints
   };
 }

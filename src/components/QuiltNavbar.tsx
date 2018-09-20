@@ -1,26 +1,40 @@
-import * as React from "react";
-import { NavLink } from "react-router-dom";
-import {
-  Button,
-  Collapse,
-  Nav,
-  Navbar,
-  NavbarToggler,
-  NavItem
-} from "reactstrap";
-import Logo from "../assets/log-mia-b-big.svg";
+import * as React from 'react';
+import * as ReactModal from 'react-modal';
+import { NavLink } from 'react-router-dom';
+import { Button, Collapse, Nav, Navbar, NavbarToggler, NavItem } from 'reactstrap';
+
+import Logo from '../assets/log-mia-b-big.svg';
+import PostYourStory from './PostYourStory';
 
 export interface IQuiltNavbarState {
-  readonly isOpen: boolean;
+  readonly isOpen?: boolean;
+  readonly isModalOpen?: boolean;
 }
+
+ReactModal.setAppElement("#root");
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    minHeight: "300px",
+    minWidth: "250px",
+    width: "60%",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    padding: 0,
+    maxHeight: "98vh",
+    maxWidth: "98vw"
+  }
+};
 
 export default class QuiltNavbar extends React.Component<
   {},
   IQuiltNavbarState
 > {
-  public readonly state = {
-    isOpen: false
-  };
+  public readonly state = { isOpen: false, isModalOpen: true };
 
   public render() {
     return (
@@ -69,7 +83,20 @@ export default class QuiltNavbar extends React.Component<
             </Nav>
           </Collapse>
         </Navbar>
-
+        <ReactModal
+          isOpen={this.state.isModalOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <button
+            className="d-block ml-auto btn btn-no-outline"
+            onClick={this.closeModal}
+          >
+            X
+          </button>
+          <PostYourStory closeModal={this.closeModal} />
+        </ReactModal>
         <section>
           <h1 className="mb-5 d-flex flex-column quilt-action-call">
             <p className="text-center mb-0">
@@ -94,8 +121,13 @@ export default class QuiltNavbar extends React.Component<
       isOpen: !state.isOpen
     }));
   };
+  private closeModal = () => {
+    this.setState({ isModalOpen: false });
+  };
 
   private postYourStory = () => {
-    window.alert("This functionality is temporary disabled");
+    this.setState(state => ({
+      isModalOpen: !state.isModalOpen
+    }));
   };
 }

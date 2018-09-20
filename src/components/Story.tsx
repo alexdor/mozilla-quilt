@@ -1,18 +1,19 @@
-import { distanceInWordsToNow } from "date-fns";
-import * as React from "react";
-import { Card, CardBody, CardImg, CardText, CardTitle, Col } from "reactstrap";
-import Expand from "../assets/Expand";
-import Pin from "../assets/Pin";
-import { types, Types } from "../helpers/consts";
+import { distanceInWordsToNow } from 'date-fns';
+import * as React from 'react';
+import { Card, CardBody, CardImg, CardText, CardTitle, Col } from 'reactstrap';
+
+import Expand from '../assets/Expand';
+import Pin from '../assets/Pin';
+import { Types, types } from '../helpers/consts';
 
 export interface IStoryProps {
   type: Types;
   country: string;
   workOn: string;
   imAble: string;
-  imgUrl: string;
-  userName: string;
-  userImg: string;
+  imgUrl?: string;
+  userName?: string;
+  userImg?: string;
   postedAt: string;
   index: number;
 }
@@ -82,14 +83,15 @@ export default class Story extends React.Component<IStoryProps, IState> {
             </div>
           </div>
           <CardBody className="px-4">
-            <CardTitle>{`I contribute to ${cardType.title} by...`}</CardTitle>
+            <CardTitle>I contribute to {cardType.title} by..</CardTitle>
             <CardText className="home-story-description">{workOn}</CardText>
             {expanded ? (
               <React.Fragment>
                 <hr />
-                <CardTitle>{`I contribute to ${
-                  cardType.title
-                } by...`}</CardTitle>
+                <CardTitle>
+                  I contribute to {cardType.title}
+                  by...
+                </CardTitle>
                 <CardText className="home-story-description">{imAble}</CardText>
                 <div className="d-flex justify-content-between align-items-center home-story-bottom-bar">
                   <div>
@@ -102,7 +104,7 @@ export default class Story extends React.Component<IStoryProps, IState> {
                   </div>
                   <div className="d-flex">
                     <span className="mr-2 my-auto">
-                      {distanceInWordsToNow(postedAt)}
+                      {distanceInWordsToNow(postedAt)} ago
                     </span>
                     {icon}
                   </div>

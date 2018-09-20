@@ -1,5 +1,7 @@
-import * as React from "react";
+import * as React from 'react';
 
-const Divider: React.SFC<{}> = () => <div className="divider" />;
+const Divider: React.SFC<{ className?: string }> = ({ className }) => (
+  <div className={`divider ${className}`} />
+);
 
 export default Divider;

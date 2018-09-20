@@ -268,3 +268,149 @@ li {
   opacity: 0.4;
   width: 25vw;
 }
+.user-divider {
+  background-color: #5fa1f4;
+  height: 2px;
+  opacity: 0.5;
+  width: 90%;
+}
+
+.btn-no-outline {
+  background: none;
+  border: 0;
+}
+
+.post-story-modal-wrapper {
+  height: 100%;
+  min-height: 220px;
+}
+
+.file-input-wrapper {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  > input[type="file"] {
+    font-size: 200px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  > .btn-file-input {
+    background: transparent;
+    border: 0;
+    color: #000;
+    display: inline-block;
+    font-family: $font-0;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+    letter-spacing: -0.2px;
+    opacity: 0.33;
+    width: 100%;
+  }
+}
+.post-user-checks {
+  color: #1a1a1a;
+  font-family: $font-1;
+  font-size: 0.8em;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  line-height: 1.8;
+  opacity: 0.5;
+}
+
+.user-input-width {
+  height: 30px;
+  width: 200px;
+}
+
+.post-story-input {
+  border: solid 1px #979797;
+  border-radius: 8px;
+  opacity: 0.5;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.not-selected {
+  span {
+    color: #ccc;
+  }
+}
+
+.modal-footer-btn {
+  background: transparent;
+  border: solid 1px #fff;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.2px;
+  line-height: normal;
+  text-align: center;
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #ccc;
+    color: #ccc;
+  }
+}
+
+.post-success {
+  align-items: center;
+  background: #36ac7e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  p {
+    color: #4a4a4a;
+    letter-spacing: -0.2px;
+  }
+  button {
+    align-self: flex-end;
+    background: transparent;
+    border: solid 1px #fff;
+    border-radius: 2px;
+    bottom: 1em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.1em;
+    letter-spacing: -0.2px;
+    padding: 0.2em 2em;
+    position: absolute;
+    right: 1em;
+    text-align: center;
+  }
+}
+
+.question-wrapper-title {
+  font-family: $font-1;
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  text-align: center;
+}
+
+.question-wrapper-subtitle {
+  color: #1a1a1a;
+  font-family: $font-1;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+  opacity: 0.5;
+  text-align: center;
+}

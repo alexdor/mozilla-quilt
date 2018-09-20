@@ -13,7 +13,7 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: "2018-08-15T08:16:48.844Z"
+    created_at: "2018-08-15T08:16:48.844Z"
   },
   {
     id: "eb22f040-58b6-4580-9dad-nad1e8b9a2a4",
@@ -26,7 +26,7 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: postedAt
+    created_at: postedAt
   },
   {
     id: "eb22f040-5nb6-4580-9dad-cad1e8b9a2a4",
@@ -39,7 +39,7 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: "2018-07-15T08:16:48.844Z"
+    created_at: "2018-07-15T08:16:48.844Z"
   },
   {
     id: "eb22f040-58b6-4580-9d3d-cad1e8b9a2a4",
@@ -52,7 +52,7 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: postedAt
+    created_at: postedAt
   },
   {
     id: "eb22ff40-58b6-4580-9dad-cad1e8b9a2a4",
@@ -65,7 +65,7 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: postedAt
+    created_at: postedAt
   }, {
     id: "eb22f040-58b6-4580-9dad-cad1e8b9a2ab",
     type: "digital" as Types,
@@ -77,7 +77,7 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: "2018-08-15T08:16:48.844Z"
+    created_at: "2018-08-15T08:16:48.844Z"
   },
   {
     id: "eb22f040-58b6-4580-9dad-nad1e8b9a2a4",
@@ -90,7 +90,7 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: postedAt
+    created_at: postedAt
   },
   {
     id: "eb22f040-5nb6-4580-9dad-cad1e8b9a2a4",
@@ -103,7 +103,7 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: "2018-07-15T08:16:48.844Z"
+    created_at: "2018-07-15T08:16:48.844Z"
   },
   {
     id: "eb22f040-58b6-4580-9d3d-cad1e8b9a2a4",
@@ -116,6 +116,6 @@ export const storieListMockData = [
     picture: "",
     user_name: "username",
     user_photo: "",
-    posted_at: postedAt
+    created_at: postedAt
   }
 ];

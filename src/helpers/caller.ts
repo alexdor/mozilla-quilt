@@ -1,4 +1,4 @@
-import { conf } from "../conf/endpoints";
+import { conf } from '../conf/endpoints';
 
 export interface IMakeCallOptions {
   section: string;
@@ -52,8 +52,17 @@ export const makeCall = ({
 
   return fetch(endpointUrl, requestObject)
     .then(
-      response =>
-        response.ok ? response.json() : Promise.reject(response.statusText)
+      async response =>
+        response.ok
+          ? {
+              data: await response.json(),
+              pagination: await JSON.parse(
+                response.headers.get("X-Pagination") ||
+                  response.headers.get("x-pagination") ||
+                  "{}"
+              )
+            }
+          : Promise.reject(response.statusText)
     )
     .catch(error => {
       // tslint:disable-next-line:no-console

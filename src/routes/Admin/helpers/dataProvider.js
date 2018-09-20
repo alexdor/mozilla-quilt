@@ -98,7 +98,10 @@ export default (type, resource, params) => {
     resource,
     params
   );
-  return fetchJson(url, options).then(response =>
+  return fetchJson(url, {
+    ...options,
+    headers: { Authorization: localStorage.getItem("jwt") }
+  }).then(response =>
     convertHTTPResponseToDataProvider(response, type, resource, params)
   );
 };
