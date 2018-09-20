@@ -1,16 +1,15 @@
-import { ConnectedRouter } from "connected-react-router";
-import * as React from "react";
-import * as ReactGA from "react-ga";
-import { Provider } from "react-redux";
-import QuiltFooter from "./components/QuiltFooter";
-import QuiltNavbar from "./components/QuiltNavbar";
-import { develop } from "./helpers/helpers";
-import { Routes } from "./routes";
-import store, { history } from "./store/createStore";
+import 'react-s-alert/dist/s-alert-default.css';
 
-if (!develop) {
-  ReactGA.initialize("UA-84301250-18");
-}
+import { ConnectedRouter } from 'connected-react-router';
+import * as React from 'react';
+import { Provider } from 'react-redux';
+import Alert from 'react-s-alert';
+
+import QuiltFooter from './components/QuiltFooter';
+import QuiltNavbar from './components/QuiltNavbar';
+import { Routes } from './routes';
+import store, { history } from './store/createStore';
+
 class App extends React.Component {
   public render() {
     return (
@@ -27,6 +26,7 @@ class App extends React.Component {
                 <Routes />
               </div>
               <QuiltFooter />
+              <Alert stack={{ limit: 3 }} position="bottom-left" />
             </div>
           </ConnectedRouter>
         </Provider>

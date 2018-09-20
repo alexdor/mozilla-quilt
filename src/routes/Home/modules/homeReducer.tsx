@@ -1,3 +1,4 @@
+import Alert from 'react-s-alert';
 import { Dispatch } from 'redux';
 import { ActionType, createAction, getType } from 'typesafe-actions';
 
@@ -60,7 +61,8 @@ export const getStories = (
     .then((res: { data: IStory[]; pagination: IPagination }) =>
       dispatch(setStories(res))
     )
-    .catch(() => {
+    .catch(e => {
+      Alert.error(e.message);
       dispatch(stopLoading());
     });
 };

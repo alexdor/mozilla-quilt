@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import Alert from 'react-s-alert';
 import { Form } from 'reactstrap';
 
 import { makeCall } from '../helpers/caller';
 import { Types, types } from '../helpers/consts';
 import { steps } from './Steps';
 import Success from './Success';
+import { IUser } from './UserUpload';
 
 // tslint:disable-next-line:no-var-requires
 const debounce = require("lodash.debounce");
@@ -19,14 +21,7 @@ interface IState {
   im_able?: string;
   country?: string;
   done?: boolean;
-  user?: {
-    name?: string;
-    surname?: string;
-    email?: string;
-    receive_email_update?: string;
-    anonymous?: boolean;
-    picture?: string;
-  };
+  user?: IUser;
   counter: number;
 }
 
@@ -39,7 +34,7 @@ class PostYourStory extends React.Component<any, IState> {
     step: 0,
     type: undefined,
     counter: 0,
-    user: { anonymous: true },
+    user: { anonymous: true, privacy: false },
     done: false
   };
 
@@ -121,12 +116,20 @@ class PostYourStory extends React.Component<any, IState> {
 
   private save = () => {
     const params = this.state;
+    if (!(params.user || {}).privacy) {
+      Alert.error("You need to concents with our Privacy Note");
+      return;
+    }
     return makeCall({
       call: { section: "stories", job: "post" },
       params
-    }).then(() => {
-      this.setState({ done: true });
-    });
+    })
+      .then(() => {
+        this.setState({ done: true });
+      })
+      .catch(e => {
+        Alert.error(e.message);
+      });
   };
 }
 

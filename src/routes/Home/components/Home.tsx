@@ -46,28 +46,29 @@ export default class Home extends React.PureComponent<
                 userImg={story.user_photo}
               />
             ))}
-            {pagination.page &&
-              pagination.page < pagination.total_pages && (
-                <Col
-                  md="6"
-                  lg="4"
-                  sm="12"
-                  className={`home-story-container c-pointer mb-3 d-flex justify-content-center align-items-start ${
-                    stories.length % 3 === 1 ? "mt-5" : ""
-                  }`}
-                >
-                  <button
-                    disabled={!!loading}
-                    // tslint:disable-next-line:jsx-no-lambda
-                    onClick={() => {
-                      getStories();
-                    }}
-                    className="load-more-btn btn"
+            {pagination.page
+              ? pagination.page < pagination.total_pages && (
+                  <Col
+                    md="6"
+                    lg="4"
+                    sm="12"
+                    className={`home-story-container c-pointer mb-3 d-flex justify-content-center align-items-start ${
+                      stories.length % 3 === 1 ? "mt-5" : ""
+                    }`}
                   >
-                    Load More
-                  </button>
-                </Col>
-              )}
+                    <button
+                      disabled={!!loading}
+                      // tslint:disable-next-line:jsx-no-lambda
+                      onClick={() => {
+                        getStories();
+                      }}
+                      className="load-more-btn btn"
+                    >
+                      Load More
+                    </button>
+                  </Col>
+                )
+              : ""}
           </Row>
         </section>
       </div>

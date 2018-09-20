@@ -5,18 +5,18 @@ import Divider from './Divider';
 
 // tslint:disable-next-line:no-var-requires
 const debounce = require("lodash.debounce");
-
+export interface IUser {
+  name?: string;
+  surname?: string;
+  email?: string;
+  receive_email_update?: string;
+  anonymous?: boolean;
+  picture?: string;
+  privacy?: boolean;
+}
 export interface IUserUploadProps {
   updateParentState: (user: any) => any;
-  user?: {
-    name?: string;
-    surname?: string;
-    email?: string;
-    receive_email_update?: string;
-    anonymous?: boolean;
-    picture?: string;
-    privacy?: boolean;
-  };
+  user?: IUser;
 }
 
 export class UserUpload extends React.Component<IUserUploadProps, any> {
