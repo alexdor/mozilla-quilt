@@ -20,7 +20,7 @@ const endpoints = {
 };
 
 export let conf = {
-  apiBaseUrl: "https://api-quilt.swaco.io/",
+  apiBaseUrl: "https://api-quilt.swaco.io/api/",
   endpoints
 };
 
