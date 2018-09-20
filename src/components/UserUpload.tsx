@@ -84,7 +84,7 @@ export class UserUpload extends React.Component<IUserUploadProps, any> {
           </FormGroup>
         </div>
         <Divider className="user-divider" />
-        <div className="post-user-checks pt-4">
+        <div className="post-user-checks pt-4 mx-5">
           <FormGroup check={true} className="d-flex align-items-center">
             <Input
               type="checkbox"
