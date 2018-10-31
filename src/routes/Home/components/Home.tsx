@@ -1,10 +1,10 @@
+import '../../../styles/home.css';
+
 import * as React from 'react';
 import { Col, Row } from 'reactstrap';
+
 import Story from '../../../components/Story';
-import '../../../styles/home.css';
 import { IPagination, IStory } from '../modules/homeReducer';
-
-
 
 interface IHomeProps {
   readonly getStories: () => any;
@@ -43,7 +43,7 @@ export default class Home extends React.PureComponent<
                 imgUrl={story.picture}
                 userName={story.user_name}
                 postedAt={story.created_at}
-                userImg={story.user.picture}
+                userImg={(story.user || {}).picture}
               />
             ))}
             {pagination.page
