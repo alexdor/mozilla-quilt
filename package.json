@@ -33,7 +33,6 @@
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
     "react": "^16.6.0",
-    "react-async-component": "^2.0.0",
     "react-dom": "^16.6.0",
     "react-ga": "^2.5.3",
     "react-markdown": "^4.0.3",
