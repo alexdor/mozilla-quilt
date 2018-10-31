@@ -1,10 +1,11 @@
-// import Raven from "raven-js";
-import { routerMiddleware } from "connected-react-router";
-import createHistory from "history/createBrowserHistory";
-import { applyMiddleware, compose, createStore } from "redux";
-import thunk from "redux-thunk";
-import reducerRegistry from "./reducers";
+import { routerMiddleware } from 'connected-react-router';
+import createHistory from 'history/createBrowserHistory';
+import { applyMiddleware, compose, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
+import reducerRegistry from './reducers';
+
+// import Raven from "raven-js";
 export const history = createHistory();
 
 const initialState = {};
