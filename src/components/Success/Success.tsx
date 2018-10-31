@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import Possum from './assets/icon-possum.svg';
 

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Divider from "../../../components/Divider";
 import FAQComponent from "../../../components/FAQComponent";
 import "../../../styles/faq.css";

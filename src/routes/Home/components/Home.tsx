@@ -1,6 +1,6 @@
 import '../../../styles/home.css';
 
-import * as React from 'react';
+import React from 'react';
 import { Col, Row } from 'reactstrap';
 
 import Story from '../../../components/Story';

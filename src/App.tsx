@@ -1,7 +1,7 @@
 import 'react-s-alert/dist/s-alert-default.css';
 
 import { ConnectedRouter } from 'connected-react-router';
-import * as React from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import Alert from 'react-s-alert';
 

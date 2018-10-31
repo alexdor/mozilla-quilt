@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 const FooterIcon: React.SFC<{ src: string; title: string }> = ({
   src,

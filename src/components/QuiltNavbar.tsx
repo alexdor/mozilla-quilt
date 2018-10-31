@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as ReactModal from 'react-modal';
+import React from 'react';
+import ReactModal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 import { Button, Collapse, Nav, Navbar, NavbarToggler, NavItem } from 'reactstrap';
 
@@ -30,7 +30,7 @@ const customStyles = {
   }
 };
 
-export default class QuiltNavbar extends React.Component<
+export default class QuiltNavbar extends React.PureComponent<
   {},
   IQuiltNavbarState
 > {

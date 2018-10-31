@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import License from "../assets/icon-small-cc.svg";
 import Guidelines from "../assets/icon-small-guidelines.svg";
 import Legal from "../assets/icon-small-legal.svg";

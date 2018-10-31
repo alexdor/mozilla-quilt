@@ -1,5 +1,5 @@
 import { distanceInWordsToNow } from 'date-fns';
-import * as React from 'react';
+import React from 'react';
 import { Card, CardBody, CardImg, CardText, CardTitle, Col } from 'reactstrap';
 
 import Expand from '../assets/Expand';
@@ -22,7 +22,7 @@ interface IState {
   expanded: boolean;
 }
 
-export default class Story extends React.Component<IStoryProps, IState> {
+export default class Story extends React.PureComponent<IStoryProps, IState> {
   public state = {
     expanded: false
   };

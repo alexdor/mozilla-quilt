@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import FormGroup from 'reactstrap/lib/FormGroup';
 
 export interface IQuestionWrapperProps {
@@ -8,17 +8,16 @@ export interface IQuestionWrapperProps {
   color: string;
 }
 
-export const QuestionWrapper = ({
-  title,
-  children,
-  subtitle,
-  color
-}: IQuestionWrapperProps) => (
-  <FormGroup className="p-4 d-flex flex-column align-items-center">
-    <h3 style={{ color }} className="question-wrapper-title">
-      {title}
-    </h3>
-    {subtitle && <span className="question-wrapper-subtitle">{subtitle}</span>}
-    <div className="mt-4 w-100">{children}</div>
-  </FormGroup>
+export const QuestionWrapper = (React as any).memo(
+  ({ title, children, subtitle, color }: IQuestionWrapperProps) => (
+    <FormGroup className="p-4 d-flex flex-column align-items-center">
+      <h3 style={{ color }} className="question-wrapper-title">
+        {title}
+      </h3>
+      {subtitle && (
+        <span className="question-wrapper-subtitle">{subtitle}</span>
+      )}
+      <div className="mt-4 w-100">{children}</div>
+    </FormGroup>
+  )
 );

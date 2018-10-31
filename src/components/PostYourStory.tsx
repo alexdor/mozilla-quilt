@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Alert from 'react-s-alert';
 import { Form } from 'reactstrap';
@@ -42,7 +42,7 @@ const TOTAL_STEPS = 4; // Counting from 0
 
 const stepKeyMapping = ["type", "work_on", "im_able", "country", "user"];
 
-class PostYourStory extends React.Component<any, IState> {
+class PostYourStory extends React.PureComponent<any, IState> {
   public state = {
     step: 0,
     type: undefined,
