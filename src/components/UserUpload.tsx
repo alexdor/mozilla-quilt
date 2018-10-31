@@ -19,7 +19,7 @@ export interface IUserUploadProps {
   user?: IUser;
 }
 
-export class UserUpload extends React.Component<IUserUploadProps, any> {
+export class UserUpload extends React.PureComponent<IUserUploadProps, any> {
   public state = {
     name: (this.props.user || {}).name,
     surname: (this.props.user || {}).surname,

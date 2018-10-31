@@ -22,7 +22,6 @@ class App extends React.Component {
             >
               <div className="container">
                 <QuiltNavbar />
-
                 <Routes />
               </div>
               <QuiltFooter />

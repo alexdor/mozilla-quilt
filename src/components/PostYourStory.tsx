@@ -25,6 +25,19 @@ interface IState {
   counter: number;
 }
 
+const getBase64 = (id: string) =>
+  new Promise((resolve, reject) => {
+    const pic = document.getElementById(id) as any;
+    const reader = new FileReader();
+    reader.readAsDataURL(pic.files[0]);
+    reader.onload = () => {
+      resolve(reader.result as any);
+    };
+    reader.onerror = error => {
+      reject(error);
+    };
+  });
+
 const TOTAL_STEPS = 4; // Counting from 0
 
 const stepKeyMapping = ["type", "work_on", "im_able", "country", "user"];
@@ -114,11 +127,20 @@ class PostYourStory extends React.Component<any, IState> {
     }, 200)();
   };
 
-  private save = () => {
-    const params = this.state;
+  private save = async () => {
+    const params = JSON.parse(JSON.stringify(this.state));
     if (!(params.user || {}).privacy) {
       Alert.error("You need to concents with our Privacy Note");
       return;
+    }
+    if ((params.user || {}).picture as File) {
+      try {
+        params.user.picture = await getBase64("picture");
+      } catch (error) {
+        // tslint:disable-next-line:no-console
+        console.error("Error: ", error);
+        return Alert.error("Failed to upload your file");
+      }
     }
     return makeCall({
       call: { section: "stories", job: "post" },

@@ -97,7 +97,7 @@ export default class Story extends React.Component<IStoryProps, IState> {
                   <div>
                     <img
                       src={userImg}
-                      className="rounded-circle"
+                      className="rounded-circle user-photo"
                       alt="user avatar"
                     />
                     <span>{userName}</span>
