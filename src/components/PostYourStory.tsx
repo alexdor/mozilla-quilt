@@ -1,3 +1,4 @@
+import debounce from 'lodash.debounce';
 import React from 'react';
 import { connect } from 'react-redux';
 import Alert from 'react-s-alert';
@@ -9,11 +10,7 @@ import { steps } from './Steps';
 import Success from './Success';
 import { IUser } from './UserUpload';
 
-// tslint:disable-next-line:no-var-requires
-const debounce = require("lodash.debounce");
-
 // FIXME: Add typings
-// export interface IPostYourStoryProps {}
 interface IState {
   step: number;
   type?: Types;

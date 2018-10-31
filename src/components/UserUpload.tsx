@@ -1,10 +1,9 @@
+import debounce from 'lodash.debounce';
 import React from 'react';
 import { FormGroup, Input, Label } from 'reactstrap';
 
 import Divider from './Divider';
 
-// tslint:disable-next-line:no-var-requires
-const debounce = require("lodash.debounce");
 export interface IUser {
   name?: string;
   surname?: string;
