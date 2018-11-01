@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 
 import { IRootState } from '../../../store/reducers';
 import Home from '../components/Home';
-import { getStories } from '../modules/homeReducer';
+import { getImageLinks, getQA, getStories } from '../modules/homeReducer';
 
 const mapDispatchToProps = {
-  getStories
+  getStories,
+  getQA,
+  getImageLinks
 };
 const mapStateToProps = (state: IRootState) => ({
   stories: state.home.stories,

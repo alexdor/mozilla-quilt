@@ -16,6 +16,18 @@ const endpoints = {
       segment: "stories",
       type: "POST"
     }
+  },
+  qa: {
+    get: {
+      segment: "qa",
+      type: "GET"
+    }
+  },
+  imageLinks: {
+    get: {
+      segment: "images",
+      type: "GET"
+    }
   }
 };
 

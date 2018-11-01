@@ -3,12 +3,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Alert from 'react-s-alert';
 import { Form } from 'reactstrap';
+import { getBase64 } from 'src/helpers/helpers';
 
 import { makeCall } from '../helpers/caller';
 import { Types, types } from '../helpers/consts';
+import Success from './Questions/Success';
+import { IUser } from './Questions/UserUpload';
 import { steps } from './Steps';
-import Success from './Success';
-import { IUser } from './UserUpload';
 
 // FIXME: Add typings
 interface IState {
@@ -22,22 +23,16 @@ interface IState {
   counter: number;
 }
 
-const getBase64 = (id: string) =>
-  new Promise((resolve, reject) => {
-    const pic = document.getElementById(id) as any;
-    const reader = new FileReader();
-    reader.readAsDataURL(pic.files[0]);
-    reader.onload = () => {
-      resolve(reader.result as any);
-    };
-    reader.onerror = error => {
-      reject(error);
-    };
-  });
+const TOTAL_STEPS = 5; // Counting from 0
 
-const TOTAL_STEPS = 4; // Counting from 0
-
-const stepKeyMapping = ["type", "work_on", "im_able", "country", "user"];
+const stepKeyMapping = [
+  "type",
+  "work_on",
+  "im_able",
+  "picture",
+  "country",
+  "user"
+];
 
 class PostYourStory extends React.PureComponent<any, IState> {
   public state = {
@@ -45,7 +40,8 @@ class PostYourStory extends React.PureComponent<any, IState> {
     type: undefined,
     counter: 0,
     user: { anonymous: true, privacy: false },
-    done: false
+    done: false,
+    picture: undefined
   };
 
   public render() {
@@ -63,6 +59,7 @@ class PostYourStory extends React.PureComponent<any, IState> {
               type,
               this.onChange,
               this.state[stepKeyMapping[step]],
+              this.state.picture,
               step !== 0 ? color : ""
             )}
           </Form>
@@ -139,6 +136,7 @@ class PostYourStory extends React.PureComponent<any, IState> {
         return Alert.error("Failed to upload your file");
       }
     }
+
     return makeCall({
       call: { section: "stories", job: "post" },
       params

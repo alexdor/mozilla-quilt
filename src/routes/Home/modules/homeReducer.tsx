@@ -10,6 +10,8 @@ export interface IHomeState {
   readonly stories: IStory[];
   readonly pagination: IPagination | { page: number };
   readonly loading: boolean;
+  readonly qa: any[];
+  readonly links: any[];
 }
 
 export interface IStory {
@@ -47,6 +49,16 @@ export const setStories = createAction(
     resolve(payload)
 );
 
+export const setQA = createAction(
+  "@@mozilla_quilt/GET_IMAGES",
+  resolve => (payload: { data: any[] }) => resolve(payload)
+);
+
+export const setLinks = createAction(
+  "@@mozilla_quilt/GET_LINKS",
+  resolve => (payload: { data: any[] }) => resolve(payload)
+);
+
 const loading = createAction("@@mozilla_quilt/STORIES_LOADING");
 
 const stopLoading = createAction("@@mozilla_quilt/STORIES_STOP_LOADING");
@@ -70,7 +82,27 @@ export const getStories = (
     });
 };
 
-export const actions = { setStories, loading, stopLoading };
+export const getImageLinks = () => (dispatch: Dispatch) => {
+  return makeCall({
+    call: { section: "imageLinks", job: "get" }
+  })
+    .then((res: { data: any[] }) => dispatch(setLinks(res)))
+    .catch(e => {
+      Alert.error(e.message);
+    });
+};
+
+export const getQA = () => (dispatch: Dispatch) => {
+  return makeCall({
+    call: { section: "qa", job: "get" }
+  })
+    .then((res: { data: any[] }) => dispatch(setQA(res)))
+    .catch(e => {
+      Alert.error(e.message);
+    });
+};
+
+export const actions = { setStories, loading, stopLoading, setQA, setLinks };
 
 export type RootAction = ActionType<typeof actions>;
 
@@ -80,7 +112,9 @@ export type RootAction = ActionType<typeof actions>;
 const initialState: Partial<IHomeState> = {
   stories: [],
   pagination: { page: 0 },
-  loading: true
+  loading: true,
+  qa: [],
+  links: []
 };
 export default (state = initialState, action: RootAction) => {
   switch (action.type) {
@@ -90,6 +124,16 @@ export default (state = initialState, action: RootAction) => {
         stories: [...(state.stories || []), ...action.payload.data],
         pagination: action.payload.pagination,
         loading: false
+      };
+    case getType(actions.setQA):
+      return {
+        ...state,
+        qa: action.payload.data
+      };
+    case getType(actions.setLinks):
+      return {
+        ...state,
+        links: action.payload.data
       };
     case getType(actions.loading):
       return { ...state, loading: true };

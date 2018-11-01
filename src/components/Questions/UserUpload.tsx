@@ -2,7 +2,8 @@ import debounce from 'lodash.debounce';
 import React from 'react';
 import { FormGroup, Input, Label } from 'reactstrap';
 
-import Divider from './Divider';
+import Divider from '../Divider';
+import { PictureIcon } from '../PictureIcon';
 
 export interface IUser {
   name?: string;
@@ -16,6 +17,7 @@ export interface IUser {
 export interface IUserUploadProps {
   updateParentState: (user: any) => any;
   user?: IUser;
+  color: string;
 }
 
 export class UserUpload extends React.PureComponent<IUserUploadProps, any> {
@@ -71,10 +73,16 @@ export class UserUpload extends React.PureComponent<IUserUploadProps, any> {
               defaultValue={email}
             />
             <div className="user-input-width file-input-wrapper mx-2 col-12 col-md-5 mt-2">
-              <button className="btn-file-input">Profile Picture</button>
+              <button
+                className={`btn-file-input ${picture ? "file-selected" : ""}`}
+              >
+                <PictureIcon color={this.props.color} />
+                {picture ? " Picture selected" : " Profile Picture"}
+              </button>
               <Input
                 name="file"
                 type="file"
+                accept="image/png,image/jgp,image/jpeg"
                 onChange={this.handleChange}
                 defaultValue={picture}
                 id="picture"

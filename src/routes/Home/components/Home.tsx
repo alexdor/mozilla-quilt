@@ -8,9 +8,11 @@ import { IPagination, IStory } from '../modules/homeReducer';
 
 interface IHomeProps {
   readonly getStories: () => any;
-  stories?: IStory[];
-  pagination: IPagination;
-  loading: boolean;
+  readonly stories?: IStory[];
+  readonly pagination: IPagination;
+  readonly loading: boolean;
+  readonly getQA: () => any;
+  readonly getImageLinks: () => any;
 }
 export default class Home extends React.PureComponent<
   IHomeProps,
@@ -23,6 +25,8 @@ export default class Home extends React.PureComponent<
   public componentDidMount(): void {
     if (!((this.props.stories || []).length > 0)) {
       this.props.getStories();
+      this.props.getQA();
+      this.props.getImageLinks();
     }
   }
 

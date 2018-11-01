@@ -27,3 +27,16 @@ export const customOutboundLink = (url: string) =>
     : outboundLink({ label: url }, () => {
         window.open(url, "_blank");
       });
+
+export const getBase64 = (id: string) =>
+  new Promise((resolve, reject) => {
+    const pic = document.getElementById(id) as any;
+    const reader = new FileReader();
+    reader.readAsDataURL(pic.files[0]);
+    reader.onload = () => {
+      resolve(reader.result as any);
+    };
+    reader.onerror = error => {
+      reject(error);
+    };
+  });

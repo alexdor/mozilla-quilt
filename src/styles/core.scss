@@ -291,6 +291,7 @@ li {
   position: relative;
   width: 100%;
   > input[type="file"] {
+    cursor: pointer;
     font-size: 200px;
     opacity: 0;
     position: absolute;
@@ -301,14 +302,18 @@ li {
     background: transparent;
     border: 0;
     color: #000;
+    cursor: pointer;
     display: inline-block;
     font-family: $font-0;
     font-size: 18px;
     font-style: italic;
     font-weight: normal;
     letter-spacing: -0.2px;
-    opacity: 0.33;
+    opacity: 0.5;
     width: 100%;
+  }
+  .file-selected {
+    opacity: 0.8;
   }
 }
 .post-user-checks {
@@ -324,7 +329,7 @@ li {
 }
 
 .user-input-width {
-  height: 30px;
+  height: 32px;
   width: 200px;
 }
 
@@ -341,6 +346,9 @@ li {
 .not-selected {
   span {
     color: #ccc;
+  }
+  img {
+    opacity: 0.3;
   }
 }
 
@@ -413,4 +421,9 @@ li {
   line-height: 1.2;
   opacity: 0.5;
   text-align: center;
+}
+
+.image-custom-thumbnail {
+  height: 150px;
+  width: 150px;
 }
