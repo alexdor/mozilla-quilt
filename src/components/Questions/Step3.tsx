@@ -33,18 +33,19 @@ const Step3 = ({
     }
   };
 
+  const localImageUpload =
+    defaultValue && defaultValue.substring(0, 4) === "data";
+
   return (
     <QuestionWrapper color={color} key="3" title="Attach a photo to your story">
       <div className="user-input-width file-input-wrapper mx-auto mb-4">
         <button
           className={`btn-file-input ${
-            defaultValue && defaultValue.substring(0, 4) === "data"
-              ? "file-selected"
-              : ""
+            localImageUpload ? "file-selected" : ""
           } `}
         >
           <PictureIcon color={color} />
-          {defaultValue ? " Picture selected" : " Upload a Picture"}
+          {localImageUpload ? " Picture selected" : " Upload a Picture"}
         </button>
         <Input
           name="file"
