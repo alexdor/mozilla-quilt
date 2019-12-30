@@ -46,7 +46,7 @@
     "react-select": "^2.1.1",
     "react-sidebar": "^3.0.2",
     "reactstrap": "^6.5.0",
-    "redux": "4.0.1",
+    "redux": "4.0.5",
     "redux-thunk": "2.3.0",
     "rimraf": "^2.6.2",
     "styled-components": "^4.0.3",
